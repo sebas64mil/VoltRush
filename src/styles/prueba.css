@@ -1,0 +1,8 @@
+body{
+background-color: var(--Primary);
+}
+div{
+    width: 200px;
+    height: 200px;
+    background-color: var(--SecondaryPart1);
+}
