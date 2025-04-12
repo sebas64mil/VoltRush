@@ -1,0 +1,22 @@
+{
+    "ColorsPage/Mode 1": {
+        "Paleta 1": {
+          "SecondaryPart1": {
+            "value": "{green.600}",
+            "type": "color"
+          },
+          "Accent": {
+            "value": "{emerald.50}",
+            "type": "color"
+          },
+          "Primary": {
+            "value": "{stone.950}",
+            "type": "color"
+          },
+          "SecondaryPart2": {
+            "value": "{cyan.600}",
+            "type": "color"
+          }
+        }
+      }
+}

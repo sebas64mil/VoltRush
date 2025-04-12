@@ -1,0 +1,38 @@
+{
+    "Settingspage/desktop": {
+        "widthScreen": {
+          "value": "90rem",
+          "type": "dimension"
+        },
+        "Padding": {
+          "value": "7.5rem",
+          "type": "dimension"
+        },
+        "Gutter": {
+          "value": "1.25rem",
+          "type": "dimension"
+        },
+        "Numgrid": {
+          "value": "0.75rem",
+          "type": "dimension"
+        }
+      },
+      "Settingspage/mobile": {
+        "widthScreen": {
+          "value": "26.875rem",
+          "type": "dimension"
+        },
+        "Padding": {
+          "value": "1.25rem",
+          "type": "dimension"
+        },
+        "Gutter": {
+          "value": "0.5rem",
+          "type": "dimension"
+        },
+        "Numgrid": {
+          "value": "0.25rem",
+          "type": "dimension"
+        }
+      }
+}

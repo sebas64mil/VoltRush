@@ -27,3 +27,18 @@
 //             }
 //         }
 //     });
+
+import { GetJson } from './ConectStyles.js';
+class LoadRootStyles {
+    constructor() {
+        this.tailwind = GetJson("../public/lybraries/static/tailwind.json", "Tailwind Colors/Mode 1");
+        this.pallets = GetJson("../public/lybraries/variables/colors.json", "ColorsPage/Mode 1");
+        this.spaced = GetJson("../public/lybraries/variables/GlobalSpacing.json", "Spacing/light");
+        this.SettingDesktop = GetJson("../public/lybraries/variables/SettingsScreen.json", "Settingspage/desktop");
+        this.SettingMobile = GetJson("../public/lybraries/variables/SettingsScreen.json", "Settingspage/mobile");
+    }
+
+    async Loadpallet(){
+
+    }
+}
