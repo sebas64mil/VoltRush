@@ -1,4 +1,5 @@
 {
+  "SettingsScreen": {
     "Settingspage/desktop": {
         "widthScreen": {
           "value": "90rem",
@@ -18,21 +19,22 @@
         }
       },
       "Settingspage/mobile": {
-        "widthScreen": {
+        "widthScreenm": {
           "value": "26.875rem",
           "type": "dimension"
         },
-        "Padding": {
+        "Paddingm": {
           "value": "1.25rem",
           "type": "dimension"
         },
-        "Gutter": {
+        "Gutterm": {
           "value": "0.5rem",
           "type": "dimension"
         },
-        "Numgrid": {
+        "Numgridm": {
           "value": "0.25rem",
           "type": "dimension"
         }
       }
+}
 }

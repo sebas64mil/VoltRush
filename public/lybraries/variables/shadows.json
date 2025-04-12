@@ -1,0 +1,92 @@
+{
+    "E1": {
+        "value": [
+          {
+            "color": "#01c09e03",
+            "type": "dropShadow",
+            "x": 0,
+            "y": 118,
+            "blur": 33,
+            "spread": 0
+          },
+          {
+            "color": "#01c09e0f",
+            "type": "dropShadow",
+            "x": 0,
+            "y": 75,
+            "blur": 30,
+            "spread": 0
+          },
+          {
+            "color": "#01c09e30",
+            "type": "dropShadow",
+            "x": 0,
+            "y": 42,
+            "blur": 25,
+            "spread": 0
+          },
+          {
+            "color": "#01c09e52",
+            "type": "dropShadow",
+            "x": 0,
+            "y": 19,
+            "blur": 19,
+            "spread": 0
+          },
+          {
+            "color": "#01c09e5e",
+            "type": "dropShadow",
+            "x": 0,
+            "y": 5,
+            "blur": 10,
+            "spread": 0
+          }
+        ],
+        "type": "boxShadow"
+      },
+      "E2": {
+        "value": [
+          {
+            "color": "#01c18d00",
+            "type": "dropShadow",
+            "x": 0,
+            "y": 104,
+            "blur": 29,
+            "spread": 0
+          },
+          {
+            "color": "#01c18d03",
+            "type": "dropShadow",
+            "x": 0,
+            "y": 66,
+            "blur": 27,
+            "spread": 0
+          },
+          {
+            "color": "#01c18d0d",
+            "type": "dropShadow",
+            "x": 0,
+            "y": 37,
+            "blur": 22,
+            "spread": 0
+          },
+          {
+            "color": "#01c18d17",
+            "type": "dropShadow",
+            "x": 0,
+            "y": 17,
+            "blur": 17,
+            "spread": 0
+          },
+          {
+            "color": "#01c18d1a",
+            "type": "dropShadow",
+            "x": 0,
+            "y": 4,
+            "blur": 9,
+            "spread": 0
+          }
+        ],
+        "type": "boxShadow"
+      }
+}

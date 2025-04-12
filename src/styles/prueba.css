@@ -1,0 +1,15 @@
+body{
+background-color: var(--Primary);
+font-family: var(--space-grotesk),sans-serif;
+}
+div{
+    width: var(--widthScreen);
+    height: 200px;
+    background-color: var(--SecondaryPart1);
+    border-radius: var(--xl);
+
+}
+h1{
+    font-size: var(--8);
+    line-height: var(--l8);
+}
