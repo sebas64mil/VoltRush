@@ -7,6 +7,10 @@ div{
     height: 200px;
     background-color: var(--SecondaryPart1);
     border-radius: var(--xl);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--E2);
 
 }
 h1{

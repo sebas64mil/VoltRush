@@ -1,4 +1,5 @@
 {
+    "shadows": {
     "E1": {
         "value": [
           {
@@ -89,4 +90,5 @@
         ],
         "type": "boxShadow"
       }
+    }
 }

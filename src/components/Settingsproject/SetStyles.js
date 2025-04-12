@@ -10,6 +10,7 @@ class LoadRootStyles {
         this.spaced = await GetJson("../public/lybraries/variables/GlobalSpacing.json", "Spacing/light");
         this.SettingScreen = await GetJson("../public/lybraries/variables/SettingsScreen.json", "SettingsScreen");
         this.typography = await GetJson("../public/lybraries/variables/Typography.json", "Typography");
+        this.shadows = await GetJson("../public/lybraries/variables/shadows.json", "shadows");
     }
     async Loadpallet() {
         
@@ -83,6 +84,33 @@ async LoadTypography() {
     }
 }
 
+async LoadShadows() {
+    for (const shadowName in this.shadows) {
+        const shadowData = this.shadows[shadowName];
+        const shadowArray = shadowData.value;
+    
+
+        if (Array.isArray(shadowArray)) {
+            const boxShadowCSS = shadowArray.map(shadow => {
+                const {
+                    x = 0,
+                    y = 0,
+                    blur = 0,
+                    spread = 0,
+                    color = "#000000"
+                } = shadow;
+                
+
+                return `${x}px ${y}px ${blur}px ${spread}px ${color}`;
+            }).join(", ");
+
+            this.root.style.setProperty(`--${shadowName}`, boxShadowCSS);
+            console.log(`--${shadowName}: ${boxShadowCSS}`);
+        }
+    }
+}
+
+
 }
 
 const LoadStyles = new LoadRootStyles();
@@ -91,3 +119,4 @@ await LoadStyles.Loadpallet();
 await LoadStyles.LoadSpaced();
 await LoadStyles.LoadSettings();
 await LoadStyles.LoadTypography();
+await LoadStyles.LoadShadows();
