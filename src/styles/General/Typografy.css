@@ -1,0 +1,57 @@
+Body{
+    font-family: var(--space-grotesk),sans-serif;
+}
+
+h1{
+
+    line-height: var(--l0);
+    font-size: var(--8);
+    font-weight: var(--space-grotesk-0);
+}
+h2{
+    line-height: var(--l1);
+    font-size: var(--7);
+    font-weight: var(--space-grotesk-0);
+}
+
+h3{
+    line-height: var(--l2);
+    font-size: var(--6);
+    font-weight: var(--space-grotesk-0);
+}
+
+h4{
+    line-height: var(--l3);
+    font-size: var(--5);
+    font-weight: var(--space-grotesk-0);
+}
+
+h5{
+    line-height: var(--l4);
+    font-size: var(--4);
+    font-weight: var(--space-grotesk-0);
+}
+
+h6{
+    line-height: var(--l5);
+    font-size: var(--3);
+    font-weight: var(--space-grotesk-0);
+}
+
+.B1{
+    line-height: var(--l6);
+    font-size: var(--2);
+    font-weight: var(--space-grotesk-1);
+}
+
+.B2{
+    line-height: var(--l7);
+    font-size: var(--1);
+    font-weight: var(--space-grotesk-2);
+}
+
+.B3{
+    line-height: var(--l8);
+    font-size: var(--0);
+    font-weight: var(--space-grotesk-2);
+}
