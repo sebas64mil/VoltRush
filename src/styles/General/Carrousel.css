@@ -1,0 +1,19 @@
+.container_Carrousel {
+    margin: 0% var(--Padding);
+    gap: var(--l);
+}
+.carousel-control-prev {
+    width: 5%;
+}
+
+.carousel-control-next {
+  width: 5%;
+}
+.carousel-caption>h2{
+    background: linear-gradient(270deg, var(--SecondaryPart2, #0092B8), var(--SecondaryPart1, #00A63E));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text; 
+    width: 600px;
+    text-align: start;
+}

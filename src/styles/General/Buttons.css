@@ -1,0 +1,52 @@
+.ButtonOnlyText{
+
+    color: var(--Accent);
+    background-color: #00000000;
+    padding: var(--2xs) var(--l);
+    height: fit-content;
+    width: fit-content;
+    border-radius: 0%;
+    border-color: #00000000;
+
+}
+
+.ButtonOnlyText:hover{
+
+    background: linear-gradient(270deg, var(--SecondaryPart2, #0092B8), var(--SecondaryPart1, #00A63E));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text; /* Por compatibilidad adicional */
+    transition: 0.5s;
+}
+
+.ButtonGeneral {
+    height: fit-content;
+    width: fit-content;
+    background: linear-gradient(270deg, var(--SecondaryPart2, #0092B8), var(--SecondaryPart1, #00A63E));
+    color: var(--Accent);
+    padding: var(--2xs) var(--xl) ;
+    border-radius: var(--rs);
+    border-color: #00000000;
+}
+
+.ButtonGeneral:hover {
+    background: none;
+    color: var(--Accent);
+    background: linear-gradient(270deg, var(--SecondaryPart2, #0092B8), var(--SecondaryPart1, #00A63E));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text; 
+    transition: 0.5s;
+}
+
+.Container_Nav{
+display: flex;
+flex-direction: row;
+gap: var(--5xl);
+}
+
+.Container_Buttons{
+    display: flex;
+    flex-direction: row;
+    gap: var(--5xl);
+}

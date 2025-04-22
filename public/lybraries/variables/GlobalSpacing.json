@@ -67,81 +67,81 @@
             "value": "0rem",
             "type": "dimension"
           },
-          "2xs": {
+          "r2xs": {
             "value": "0.125rem",
             "type": "dimension"
           },
-          "xs": {
+          "rxs": {
             "value": "0.25rem",
             "type": "dimension"
           },
-          "s": {
+          "rs": {
             "value": "0.375rem",
             "type": "dimension"
           },
-          "m": {
+          "rm": {
             "value": "0.5rem",
             "type": "dimension"
           },
-          "l": {
+          "rl": {
             "value": "0.625rem",
             "type": "dimension"
           },
-          "xl": {
+          "rxl": {
             "value": "0.75rem",
             "type": "dimension"
           },
-          "2xl": {
+          "r2xl": {
             "value": "1rem",
             "type": "dimension"
           },
-          "3xl": {
+          "r3xl": {
             "value": "1.25rem",
             "type": "dimension"
           },
-          "4xl": {
+          "r4xl": {
             "value": "1.5rem",
             "type": "dimension"
           },
-          "5xl": {
+          "r5xl": {
             "value": "1.75rem",
             "type": "dimension"
           },
-          "6xl": {
+          "r6xl": {
             "value": "2rem",
             "type": "dimension"
           },
-          "7xl": {
+          "r7xl": {
             "value": "2.25rem",
             "type": "dimension"
           },
-          "8xl": {
+          "r8xl": {
             "value": "2.5rem",
             "type": "dimension"
           },
-          "full": {
+          "rfull": {
             "value": "62.438rem",
             "type": "dimension"
           }
         },
         "Stroke": {
-          "s": {
+          "Ss": {
             "value": "0.062rem",
             "type": "dimension"
           },
-          "m": {
+          "Sm": {
             "value": "0.125rem",
             "type": "dimension"
           },
-          "l": {
+          "Sl": {
             "value": "0.25rem",
             "type": "dimension"
           },
-          "xl": {
+          "Sxl": {
             "value": "0.375rem",
             "type": "dimension"
           },
-          "2xl": {
+          "S2xl": {
             "value": "0.5rem",
             "type": "dimension"
           }
