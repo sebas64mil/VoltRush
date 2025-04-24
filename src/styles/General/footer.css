@@ -1,0 +1,17 @@
+footer{
+    background-color: var(--Primary);
+    padding: var(--xl) var(--Padding);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Perfil {
+    min-width: 64px;
+    min-height: 64px;
+    background-color: var(--Accent);
+    display: inline-block; /* o block */
+    border-radius: var(--rfull);
+  }
+  
