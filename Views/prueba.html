@@ -46,12 +46,11 @@
     <a href="index2.html">parcial</a>
 
     <script type="module">
-        import { FirestoreService } from './public/modules/FirestoreService.js';
+        import { FirestoreService } from '../public/modules/firestore_Service.js';
 
 
 
-
-        const firestore = new FirestoreService("teams/dpZaC52gxG1iCsirzJ9W/projects/McdQsPnFxUaN1QHDU9vA/Homeworks");
+        const firestore = new FirestoreService("2025-I");
 
 
         document.getElementById("loadDataBtn").addEventListener("click", async () => {
