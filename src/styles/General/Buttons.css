@@ -27,6 +27,7 @@
     padding: var(--2xs) var(--xl) ;
     border-radius: var(--rs);
     border-color: #00000000;
+    text-decoration: none;
 }
 
 .ButtonGeneral:hover {

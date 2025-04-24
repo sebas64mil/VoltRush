@@ -57,7 +57,7 @@ color: var(--Accent);
 display: flex;
 flex-direction: column;
 
-gap: var(--s);
+gap: var(--2xs);
 }
 
 .paragrahgComplete{
