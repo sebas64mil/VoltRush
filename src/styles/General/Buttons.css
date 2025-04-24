@@ -50,3 +50,15 @@ gap: var(--5xl);
     flex-direction: row;
     gap: var(--5xl);
 }
+
+.ButtonCard{
+
+    height: fit-content;
+    width: fit-content;
+    background: linear-gradient(270deg, var(--SecondaryPart2, #0092B8), var(--SecondaryPart1, #00A63E));
+    color: var(--Accent);
+    padding: var(--2xs) var(--l) ;
+    border-radius: var(--rs);
+    border-color: #00000000;
+
+}

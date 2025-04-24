@@ -1,0 +1,78 @@
+.ContainerSection_Cards{
+
+    background-image: url(/public/img/fondo.png);
+    min-height: 652px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding: 0% var(--Padding);
+    gap: var(--3xl);
+  
+}
+
+.subtitle{
+    background: linear-gradient(270deg, var(--SecondaryPart2, #0092B8), var(--SecondaryPart1, #00A63E));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text; 
+}
+
+.Container_score > .score{
+    width: 16px;
+    height: 16px;
+
+}
+
+
+
+.Title_card{
+    color: var(--Accent);
+}
+
+.card_sub{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Cards{
+   max-width: 285px;
+   box-shadow: var(--E0);
+   background-color: var(--Primary);
+   border-radius: var(--rm);
+   overflow: hidden;
+}
+
+.Cards:hover{
+    box-shadow: var(--E1);
+    transition: 0.5s;
+}
+
+.contain_infoCard{
+
+padding: 12px;
+width: fit-content;
+color: var(--Accent);
+display: flex;
+flex-direction: column;
+
+gap: var(--s);
+}
+
+.paragrahgComplete{
+    word-wrap: break-word;  /* Asegura que las palabras largas se rompan */
+    overflow-wrap: break-word;
+    white-space: normal;
+    margin: 0;
+}
+
+.Container_cards{
+
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: var(--l);
+}
