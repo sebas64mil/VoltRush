@@ -1,62 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Log in VoltRush</title>
 
-        <!-- CSS styles -->
-    <link rel="stylesheet" href="../src/styles/General/Typografy.css">
-    <link rel="stylesheet" href="../src/styles/General/Body.css">
-    <link rel="stylesheet" href="../src/styles/General/Buttons.css">
-    <link rel="stylesheet" href="../src/styles/General/LogIn.css">
+    <!-- CSS styles -->
+    <link rel="stylesheet" href="../src/styles/General/Typografy.css" />
+    <link rel="stylesheet" href="../src/styles/General/Body.css" />
+    <link rel="stylesheet" href="../src/styles/General/Buttons.css" />
+    <link rel="stylesheet" href="../src/styles/General/LogIn.css" />
 
-    
-    <!-- font families-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-
-
-
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" />
 </head>
+
 <body>
     <script src="../src/components/Settingsproject/ConectStyles.js" type="module"></script>
     <script src="../src/components/Settingsproject/SetStyles.js" type="module"></script>
 
     <a href="/index.html">
-        <img class="classIcon" src="../public/img/arrow-left.svg" alt="Volver">
-      </a>
-      
+        <img class="classIcon" src="../public/img/arrow-left.svg" alt="Volver" />
+    </a>
 
-<section  class="BodyRegister">
+    <section class="BodyRegister">
+        <section class="ContainerLogIn">
+            <h3 class="Title_Register">Sign In</h3>
 
-    <section class="ContainerLogIn">
+            <div class="inputRegister">
+                <label for="name" class="inputText">
+                    <h6>Name</h6>
+                </label>
+                <input type="text" id="name" class="inputContain" placeholder="Ej: memo">
 
-        <h3 class="Title_Register">Sign In</h3>
+                <label for="email" class="inputText">
+                    <h6>Email</h6>
+                </label>
+                <input type="email" id="email" class="inputContain" placeholder="Ej: name@gmail.com">
 
-        <div class="inputRegister">
-            <label for="docId" class="inputText"><h6>Name</h6></label>
-            <input class="inputContain"  type="text" id="docIdname" placeholder="Ej: memo">
+                <label for="password" class="inputText">
+                    <h6>Password</h6>
+                </label>
+                <input type="password" id="password" class="inputContain" placeholder="Ej: 123456789">
 
-            <label for="docId" class="inputText"><h6>Email</h6></label>
-            <input class="inputContain"  type="text" id="docIdCorreoElectronico" placeholder="Ej: name@gmail.com">
+                <label for="phone" class="inputText">
+                    <h6>Phone</h6>
+                </label>
+                <input type="text" id="phone" class="inputContain" placeholder="Ej: 123456789">
 
-            <label for="docId" class="inputText"><h6>PassWord</h6></label>
-            <input class="inputContain" type="text" id="docIdContraseña" placeholder="Ej: 123456789">
+                <label for="salesTotal" class="inputText">
+                    <h6>Sales Total</h6>
+                </label>
+                <input type="number" id="salesTotal" class="inputContain" placeholder="Ej: 100">
 
-            <label for="docId" class="inputText"><h6>Confirm Password</h6></label>
-            <input class="inputContain" type="text" id="docIdConfirmarContraseña" placeholder="Ej: 123456789">
+            </div>
 
-        </div>
+            <button class="ButtonGeneral" id="submitBtn">Add Customer</button>
 
-        <a href="./Views/LogIn.html" class="ButtonGeneral" title="Click here">
-
-            <h6>Next</h6>
-          </a>
-</section >
-
+            <a href="./Views/LogIn.html" class="ButtonGeneral">
+                <h6>Next</h6>
+            </a>
+        </section>
     </section>
 
+    <script type="module" src="../src/components/signup.js"></script>
 </body>
+
 </html>
