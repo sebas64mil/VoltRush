@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>Consultas Firestore</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9f9;
+      padding: 2rem;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+    .filter, .input-container {
+      margin-bottom: 1rem;
+    }
+    input, select, button {
+      padding: 0.5rem;
+      margin-top: 0.3rem;
+      width: 100%;
+    }
+    .garment-box {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      background-color: #f0f8ff;
+    }
+    h1, h2 {
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Consulta de Prendas (Firestore)</h1>
+
+    <h2>Filtros dinámicos</h2>
+    <div id="filtersContainer">
+      <div class="filter">
+        <label>Campo</label>
+        <input type="text" class="filterColumn" placeholder="Ej: price" />
+        <label>Operador</label>
+        <input type="text" class="filterComparator" placeholder="==, >, <, etc" />
+        <label>Valor</label>
+        <input type="text" class="filterValue" placeholder="Ej: 50" />
+      </div>
+    </div>
+    <button id="addFilterBtn">Añadir otro filtro</button>
+    <br><br>
+    
+    <h2>Orden y límite (opcional)</h2>
+    <div class="input-container">
+      <label for="orderColumn">Ordenar por</label>
+      <input type="text" id="orderColumn" placeholder="Ej: price">
+    </div>
+    <div class="input-container">
+      <label for="orderDir">Dirección</label>
+      <select id="orderDir">
+        <option value="asc">Ascendente</option>
+        <option value="desc">Descendente</option>
+      </select>
+    </div>
+    <button id="multiWhereQueryBtn">Buscar</button>
+
+    <h2>Resultados</h2>
+    <div id="clothingList"></div>
+  </div>
+
+  <script type="module">
+    import { FirestoreService } from '../public/modules/firestore_servicepart2.js';
+    const firestore = new FirestoreService("products");
+
+    const renderGarments = (docs) => {
+      const container = document.getElementById("clothingList");
+      container.innerHTML = "";
+
+      if (!docs || docs.length === 0) {
+        container.innerHTML = "<p>No se encontraron resultados.</p>";
+        return;
+      }
+
+      docs.forEach(doc => {
+        const item = document.createElement("div");
+        item.className = "garment-box";
+        item.innerHTML = `
+          <strong>${doc.name || 'Sin nombre'}</strong><br>
+          <strong>ID:</strong> ${doc.id || 'N/A'}<br>
+          <strong>Precio:</strong> ${doc.price || 'N/A'}<br>
+          <strong>Categoría:</strong> ${doc.category || 'N/A'}<br>
+          <strong>Talla:</strong> ${doc.size || 'N/A'}
+        `;
+        container.appendChild(item);
+      });
+    };
+
+    document.getElementById("addFilterBtn").addEventListener("click", () => {
+      const container = document.getElementById("filtersContainer");
+      const div = document.createElement("div");
+      div.className = "filter";
+      div.innerHTML = `
+        <label>Campo</label>
+        <input type="text" class="filterColumn" placeholder="Ej: price" />
+        <label>Operador</label>
+        <input type="text" class="filterComparator" placeholder="==, >, <, etc" />
+        <label>Valor</label>
+        <input type="text" class="filterValue" placeholder="Ej: 50" />
+      `;
+      container.appendChild(div);
+    });
+
+    document.getElementById("multiWhereQueryBtn").addEventListener("click", async () => {
+      const filterDivs = document.querySelectorAll("#filtersContainer .filter");
+      const filters = [];
+
+      filterDivs.forEach(div => {
+        const column = div.querySelector(".filterColumn").value.trim();
+        const comparison = div.querySelector(".filterComparator").value.trim();
+        const valueRaw = div.querySelector(".filterValue").value.trim();
+
+        if (column && comparison) {
+          const value = isNaN(valueRaw) ? valueRaw : Number(valueRaw);
+          filters.push({ column, comparison, value });
+        }
+      });
+
+      const orderColumn = document.getElementById("orderColumn").value.trim();
+      const orderDirection = document.getElementById("orderDir").value;
+
+      const docs = await firestore.combinedQuery(
+        filters,
+        orderColumn ? { column: orderColumn, direction: orderDirection } : null,
+        
+      );
+      renderGarments(docs);
+    });
+  </script>
+</body>
+</html>
