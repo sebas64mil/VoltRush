@@ -5,6 +5,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 
 }
 
@@ -31,12 +32,13 @@ gap: var(--xl);
 
 }
 
-.ContainerLogIn>.Title_Register{
+.Title_Register{
 
     background: linear-gradient(270deg, var(--SecondaryPart2, #0092B8), var(--SecondaryPart1, #00A63E));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text; 
+    width: fit-content;
 }
 
 .inputRegister >.inputText>h6{
