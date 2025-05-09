@@ -21,27 +21,50 @@
             <!--Vue connect-->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.47/vue.global.prod.js"></script>
 </head>
-<body >
+<body class="bodyDebtors">
 
     <script src="../src/components/Settingsproject/ConectStyles.js" type="module"></script>
-    <script src="../src/components/Settingsproject/SetStyles.js" type="module"></script> 
+    <script src="../src/components/Settingsproject/SetStyles.js" type="module"></script>
     
-    <section  class="BodyRegister" id="app">
-
-        <h1 class="Title_Register">Debtors</h1>
-
-        <section class="ContainerLogIn">
-        <ul>
-
-            <li>
-                <div class="imgUser"></div>
-                <h6>Name</h6>
-            </li>
-        </ul>
-        
-    </section >
+             <a href="../Views/ConfigUsuario.html" class="ButtonSettings">
+        <img src="../public/img/config.svg" alt="Volver" />
+         </a>
     
-        </section>
+<h2 class="Title_Register">Debtors</h2>
+
+<section class="containDebtors" id="app">
+<ul class="ListDebtors">
+    <li v-for="(Deudor, index) in Deudors" :key="index">
+        <div class="Debtors">
+        <div class="infoDebtors">
+        <img src="../../../public/img/Accordion1.png" alt="Foto usuario" class="imgUser" />
+
+        <h6>{{Deudor}}</h6>
+        </div>
+
+<div class="infoDebtors">
+         <a href="#" class="ButtonDelete">
+        <img src="../public/img/info.svg" alt="Volver" />
+         </a>
+
+<button class="ButtonDelete" @click="eliminarDeudor(index)">
+  <img src="../public/img/menosDelete.png" alt="Volver" />
+</button>
+
+</div>
+
+    </div>
+    </li>
+</ul>
+<div class="AddDebtors">
+<input type="text" v-model="nuevaDeudor" class="inputContain" placeholder="Agregar nuevo Deudor">
+    <button class="ButtonGeneral" @click="agregarDeudor"><h6>Agregar</h6></button>
+
+</div>
+
+</section>
+
+<script src="../src/components/DebtorsList.js"></script>
 
 </body>
 </html>

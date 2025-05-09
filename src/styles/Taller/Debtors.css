@@ -1,11 +1,99 @@
 
-.imgUser{
+.imgUser {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;       /* Equivalente a background-size: cover */
+  object-position: 70% 50%;/* Equivalente a background-position */
+  justify-self: flex-start;
+}
 
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    margin-right: 10px;
-    background-image: url(../../../public/img/Accordion1.png);
-    background-position: 70% 50%;
-    background-size: cover;
+.bodyDebtors{
+
+    background-image: url(/public/img/fondo.png);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.containDebtors{
+
+background-color: var(--Primary);
+width: 590px;
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: var(--l) var(--xl);
+border-radius: var(--rxl);
+box-shadow: var(--E1);
+
+}
+
+
+.Debtors{
+    color: var(--Accent);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.infoDebtors{
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    gap: var(--xs);
+}
+
+
+.ButtonDelete {
+  position: relative;
+  background-color: rgba(95, 158, 160, 0);
+  border: none;
+  overflow: hidden; /* Asegura que el after no se salga del botón */
+}
+
+.ButtonDelete::after {
+  content: "";
+  position: absolute;
+  inset: 0; /* top: 0; right: 0; bottom: 0; left: 0 */
+  background-color: rgba(0, 0, 0, 0.2); /* tono oscuro sutil */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none; /* Permite que el hover siga funcionando */
+}
+
+.ButtonDelete:hover::after {
+  opacity: 1;
+}
+
+.AddDebtors{
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--xs);
+    align-items: center;
+}
+
+.ListDebtors,li{
+
+    width: 100%;
+
+}
+
+.ListDebtors{
+padding: var(--l) var(--xl);
+display: flex;
+flex-direction: column;
+gap: var(--xs);
+}
+
+.ButtonSettings{
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    
 }
