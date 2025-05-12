@@ -1,99 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Firebase Web</title>
+  <meta charset="UTF-8" />
+  <title>Autollenado de Productos</title>
 </head>
-
 <body>
-    <a href="queries.html"> Query</a>
-    <div>
-        <h1>Connected to Firestore</h1>
-        <button id="loadDataBtn">Show all documents in console</button>
-    </div>
+  <h1>Autollenado 2 de Productos a Firebase</h1>
+  <button id="fillBtn">Llenar productos</button>
 
-    <div>
-        <h1>Add student to the database</h1>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+    import {
+      getFirestore,
+      doc,
+      setDoc
+    } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
 
-        <label for="docId">Student Code:</label>
-        <input type="text" id="docId" placeholder="Ej: 30003625"><br><br>
+    // Configuración Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyANIYCtkrM7UcmFJK4AunyERlGKiHN8l1k",
+      authDomain: "voltrush-c1ee8.firebaseapp.com",
+      projectId: "voltrush-c1ee8",
+      storageBucket: "voltrush-c1ee8.firebasestorage.app",
+      messagingSenderId: "902027158636",
+      appId: "1:902027158636:web:18bcf5560098dd6f6fa449"
+    };
 
-        <label for="firstName">First Name:</label>
-        <input type="text" id="firstName" placeholder="Ej: Sergio"><br><br>
+    // Inicializar Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
 
-        <label for="lastName">Last Name:</label>
-        <input type="text" id="lastName" placeholder="Ej: Reyes"><br><br>
+    // Servicio Firestore personalizado
+    class FirestoreService {
+      constructor(collectionName) {
+        this.collectionName = collectionName;
+      }
 
-        <label for="nickname">Nickname:</label>
-        <input type="text" id="nickname" placeholder="Ej: Profe"><br><br>
+      async PostDocument(id, data) {
+        const docRef = doc(db, this.collectionName, id);
+        await setDoc(docRef, data);
+      }
+    }
 
-        <label for="age">Age:</label>
-        <input type="number" id="age" placeholder="Ej: 18"><br><br>
+    // Función para autollenar productos
+    async function autoFillProducts() {
+      const firestore = new FirestoreService("products");
+      const headquartersOptions = ["bogota", "medellin", "cali", "barranquilla"];
 
-        <button id="addDocBtn">Add Student</button>
-    </div>
-    <div>
-        <h1>Get student by id</h1>
+      for (let i = 3; i <= 100; i++) {
+        const randomPrice = (Math.random() * 1000).toFixed(2);
+        const randomHeadquarters = headquartersOptions[Math.floor(Math.random() * headquartersOptions.length)];
+        const randomDescription = `Descripción aleatoria ${Math.random().toString(36).substring(7)}`;
+        const randomAmount = Math.floor(Math.random() * 100);
 
-        <label for="getDocId">Student Code:</label>
-        <input type="text" id="getDocId" placeholder="Ej: 30003625"><br><br>
+        const productData = {
+          idProducto: i,
+          name: `producto${i}`,
+          price: parseFloat(randomPrice),
+          description: randomDescription,
+          headquarters: randomHeadquarters,
+          amount: randomAmount // 🔄 Ya no está dentro de un array
+        };
 
-        <button id="getDocBtn">Get Student</button>
-    </div>
+        const docId = i.toString();
+        await firestore.PostDocument(docId, productData);
+        console.log(`Producto ${i} creado.`);
+      }
 
-    <a href="index2.html">parcial</a>
+      alert("¡Productos generados exitosamente!");
+    }
 
-    <script type="module">
-        import { FirestoreService } from '../public/modules/firestore_Service.js';
-
-
-
-        const firestore = new FirestoreService("2025-I");
-
-
-        document.getElementById("loadDataBtn").addEventListener("click", async () => {
-            const docs = await firestore.getAllDocuments();
-            const docwithId = await firestore.getDocumentById("Tasks1"); 
-            console.log("Obtained Docs:", docs);
-            console.log("Obtained Doc with ID:", docwithId);
-        });
-
-        document.getElementById("addDocBtn").addEventListener("click", async () => {
-            const docId = document.getElementById("docId").value.trim();
-            const firstName = document.getElementById("firstName").value.trim();
-            const lastName = document.getElementById("lastName").value.trim();
-            const nickname = document.getElementById("nickname").value.trim();
-            const ageValue = document.getElementById("age").value;
-            const age = ageValue ? parseInt(ageValue) : null;
-
-            if (!docId || !firstName || !lastName) {
-                alert("Fill in the required fields: Document ID, First Name and Last Name.");
-                return;
-            }
-
-            const data = {
-                firstName,
-                lastName,
-                nickname,                    
-                age: isNaN(age) ? null : age 
-            };
-
-            await firestore.PostDocument(docId, data);
-        });
-
-        document.getElementById("getDocBtn").addEventListener("click", async () => {
-            const docId = document.getElementById("getDocId").value.trim();
-
-            if (!docId) {
-                alert("The student id is needed");
-                return;
-            }
-            const doc = await firestore.getDocumentById(docId);
-            console.log(doc);
-        });
-    </script>
+    // Botón para ejecutar
+    document.getElementById("fillBtn").addEventListener("click", () => {
+      autoFillProducts();
+    });
+  </script>
 </body>
-
 </html>
