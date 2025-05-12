@@ -26,7 +26,7 @@ class LoadRootStyles {
 
                 if (actualColor) {
                     this.root.style.setProperty(`--${color}`, actualColor); // Set CSS variable
-                    console.log(`--${color}: ${actualColor}`);
+                    // console.log(`--${color}: ${actualColor}`);
                 } else {
                     console.warn(`Color not found for ${group}.${shade}`);
                 }
@@ -38,11 +38,11 @@ class LoadRootStyles {
         // Iterate through spacing configurations and apply them to CSS variables
         for (const type in this.spaced) {
             const TypeSpacing = this.spaced[type];
-            console.log(`${type}`);
+            // console.log(`${type}`);
             
             for(const spacing in TypeSpacing) {
                 const value = TypeSpacing[spacing]?.value;
-                console.log(`--${spacing}: ${value}`);
+                // console.log(`--${spacing}: ${value}`);
                 this.root.style.setProperty(`--${spacing}`, value); // Set CSS variable
             }
         }
@@ -52,11 +52,11 @@ class LoadRootStyles {
         // Iterate through settings configurations and apply them to CSS variables
         for(Screen in this.SettingScreen) {
             const ScreenSettings = this.SettingScreen[Screen];
-            console.log(`${Screen}`);
+            // console.log(`${Screen}`);
             
             for(const Settings in ScreenSettings) {
                 const value = ScreenSettings[Settings]?.value;
-                console.log(`--${Settings}: ${value}`);
+                // console.log(`--${Settings}: ${value}`);
                 this.root.style.setProperty(`--${Settings}`, value); // Set CSS variable
             }
         }
@@ -66,7 +66,7 @@ class LoadRootStyles {
         // Iterate through typography configurations and apply them to CSS variables
         for (const type in this.typography) {
             const TypeTypography = this.typography[type];
-            console.log(`${type}`);
+            // console.log(`${type}`);
             
             for (const typography in TypeTypography) {
                 let value = TypeTypography[typography]?.value;
@@ -76,7 +76,7 @@ class LoadRootStyles {
                     value += "px"; // Add "px" if it's a pure number
                 }
 
-                console.log(`--${typography}:`, value);
+                // console.log(`--${typography}:`, value);
                 this.root.style.setProperty(`--${typography}`, value); // Set CSS variable
             }
         }
@@ -103,7 +103,7 @@ class LoadRootStyles {
                 }).join(", ");
 
                 this.root.style.setProperty(`--${shadowName}`, boxShadowCSS); // Set CSS variable
-                console.log(`--${shadowName}: ${boxShadowCSS}`);
+                // console.log(`--${shadowName}: ${boxShadowCSS}`);
             }
         }
     }
