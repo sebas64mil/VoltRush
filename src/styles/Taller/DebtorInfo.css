@@ -1,0 +1,89 @@
+.containDebtor1 {
+  display: flex;
+  justify-content: center;
+  padding: 4rem;
+  background: linear-gradient(135deg, #05bbd3, #1f085a);
+  min-height: 70vh;
+  box-sizing: border-box;
+  border-radius: 5%;
+}
+
+.Debtor {
+  display: flex;
+  flex-direction: row;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 2rem;
+  padding: 2.5rem 3rem;
+  gap: 3rem;
+  max-width: 1100px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease;
+}
+
+.Debtor:hover {
+  transform: translateY(-5px);
+}
+
+.imageContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imgUser {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #00acc1;
+  box-shadow: 0 8px 20px rgba(0, 172, 193, 0.3);
+}
+
+.infoContainer {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #333;
+}
+
+.infoContainer p {
+  margin: 0.75rem 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.infoContainer p strong {
+  color: #007c91;
+}
+
+.actionButtons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1.5rem;
+  
+}
+.ButtonDelete1 {
+  position: relative;
+  background-color: rgba(95, 158, 160, 0);
+  border: none;
+  overflow: hidden; /* Asegura que el after no se salga del botón */
+}
+
+.ButtonDelete1 img {
+  width: 36px;
+  height: 36px;
+  transition: transform 0.2s ease, border-radius 0.2s ease;
+  border-radius: 0.5rem; /* opcional: ya aplica sin hover */
+}
+
+.ButtonDelete1 img:hover {
+  transform: scale(1.1);
+  border-radius: 1rem; /* efecto más redondeado al hacer hover */
+  background-color: rgba(8, 110, 124, 0.1); /* sutil efecto */
+  padding: 4px; /* espacio interior opcional */
+}
