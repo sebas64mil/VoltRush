@@ -15,13 +15,13 @@ class ConectStyles {
             this.styles = await response.json();
 
             // Log a success message to the console.
-            console.log("JSON cargado correctamente."); // "JSON loaded successfully."
+            // console.log("JSON cargado correctamente."); // "JSON loaded successfully."
 
             // Return the parsed JSON object.
             return this.styles;
         } catch (error) {
             // If an error occurs during fetching or parsing, log the error to the console.
-            console.error("Error cargando el JSON:", error); // "Error loading the JSON."
+            // console.error("Error cargando el JSON:", error); // "Error loading the JSON."
         }
     }
 }
