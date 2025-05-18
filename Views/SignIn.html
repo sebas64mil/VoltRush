@@ -19,6 +19,7 @@
 </head>
 
 <body>
+    <script src="../frontend/login.js" type="module"></script>
     <script src="../src/components/Settingsproject/ConectStyles.js" type="module"></script>
     <script src="../src/components/Settingsproject/SetStyles.js" type="module"></script>
 
@@ -31,33 +32,42 @@
             <h3 class="Title_Register">Sign In</h3>
 
             <div class="inputRegister">
-                <label for="name" class="inputText">
+
+                <label for="Id" class="inputText">
+                    <h6>id Employee</h6>
+                </label>
+                <input type="text" id="Id" class="inputContain" placeholder="Ej: cedula">
+
+
+                <label for="SignIn" class="inputText">
                     <h6>Name</h6>
                 </label>
-                <input type="text" id="name" class="inputContain" placeholder="Ej: memo">
+                <input type="text" id="SignIn" class="inputContain" placeholder="Ej: memo">
 
-                <label for="Adress" class="inputText">
+
+                <label for="address" class="inputText">
                     <h6>Email</h6>
                 </label>
-                <input type="Adress" id="Adress" class="inputContain" placeholder="Ej: carrera septima 123">
+                <input type="text" id="address" class="inputContain" placeholder="Ej: carrera septima 123">
+
 
                 <label for="password" class="inputText">
                     <h6>Password</h6>
                 </label>
-                <input type="password" id="password" class="inputContain" placeholder="Ej: 123456789">
+                <input type="text" id="password" class="inputContain" placeholder="Ej: 123456789">
 
-                <label for="VerifyPassword" class="inputText">
+
+                <label for="passwordRepeat" class="inputText">
                     <h6>VerifyPassword</h6>
                 </label>
-                <input type="text" id="VerifyPassword" class="inputContain" placeholder="Ej: 123456789">
+                <input type="text" id="passwordRepeat" class="inputContain" placeholder="Ej: 123456789">
 
             </div>
-            <a href="./Deudores.html" class="ButtonGeneral">
+            <a href="./Deudores.html" id="SignInButton" class="ButtonGeneral">
                 <h6>Register</h6>
             </a>
+
         </section>
     </section>
-
 </body>
-
 </html>

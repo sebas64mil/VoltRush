@@ -10,7 +10,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const app = express();
-const port = 3000;
+const port = 3000; 
 
 const imagesService = new FirestoreService("LoginApp");
 
@@ -52,16 +52,16 @@ app.post('/upload', upload.single('image'), async (req, res) => {
 app.post('/register', async (req, res) => { 
   // req lo que recibe el cliente
   // res lo que devuelve el servidor
-  const { username, password } = req.body;
-  if (!username || !password) return res.status(400).send("Missing fields.");
+  const { idEmployee, name, address, password } = req.body;
+  if (!idEmployee || !password || !name || !address) return res.status(400).send("Missing fields.");
 
   const db = new SqlConnection();
 
   try {
     await db.connectToDb();
     await db.query(
-      "INSERT INTO user (iduser, password) VALUES (?, ?)",
-      [username, password]
+      "INSERT INTO employee (idemployee, name, adress, entrepreneurship_identrepreneurship, password) VALUES (?, ?, ?, 0, ?)",
+      [idEmployee, name, address, password]
     );
     res.status(200).send("User registered.");
   } catch (err) {
