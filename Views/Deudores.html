@@ -33,25 +33,20 @@
 <h2 class="Title_Register">Debtors</h2>
 
 <section class="containDebtors" id="app">
-<ul class="ListDebtors">
-    <li v-for="(Deudor, index) in Deudors" :key="index">
-        <div class="Debtors">
+  <ul class="ListDebtors">
+    <li v-for="(nombre, index) in nombres" :key="index">
+      <div class="Debtors">
         <div class="infoDebtors">
-        <img src="../../../public/img/Accordion1.png" alt="Foto usuario" class="imgUser" />
-
-        <h6>{{Deudor}}</h6>
+          <img src="../../../public/img/Accordion1.png" alt="Foto usuario" class="imgUser" />
+          <h6>{{ nombre }} {{ apellidos[index] }}</h6>
+             <p class="B1">ID: {{ ids[index] }}</p>
         </div>
-
-</div>
-
-    </div>
+      </div>
     </li>
-</ul>
-
-
+  </ul>
 </section>
 
-<script src="../src/components/DebtorsList.js"></script>
+<script type="module" src="../src/components/DebtorsList.js"></script>
 
 </body>
 </html>

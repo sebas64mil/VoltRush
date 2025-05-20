@@ -1,24 +1,22 @@
-        const app = Vue.createApp({
-            data() {
-                return {
-                    Deudors: ['pepito', 'aleja', 'Juan Jose'],
-                    nuevaDeudor: ''
-                };
-            },
-            methods: {
-                // Puedes agregar métodos aquí si es necesario
-                agregarDeudor() {
-                    if (this.nuevaDeudor.trim() !== '') {
-                        this.Deudors.push(this.nuevaDeudor);
-                        this.nuevaDeudor = ''; // Limpiar el campo de entrada
-                    }
-                },
-                eliminarDeudor(index) {
-                    this.Deudors.splice(index, 1); // Eliminar la Deudor en el índice especificado
-                }
-               
-                
-            }
-        });
+import { FirestoreService } from '../../public/modules/firestore_service.js';
 
-        app.mount('#app');
+const firestore = new FirestoreService("Deudores");
+
+const app = Vue.createApp({
+  data() {
+    return {
+      ids: [],
+      nombres: [],
+      apellidos: []
+    };
+  },
+  async mounted() {
+    const docs = await firestore.getAllDocuments();
+
+    this.ids = docs.map(doc => doc.ID);
+    this.nombres = docs.map(doc => doc.Nombre);
+    this.apellidos = docs.map(doc => doc.Apellido);
+  }
+});
+
+app.mount('#app');
