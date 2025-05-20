@@ -22,6 +22,38 @@
 
     <!--Vue connect-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.47/vue.global.prod.js"></script>
+        <style>
+    body {
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
+
+    .ButtonSettings {
+      padding: 10px;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+
+    .settings-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    .classIcon {
+      width: 24px;
+      height: 24px;
+    }
+  </style>
+
 </head>
 
 <body class="bodyDebtors">
@@ -29,10 +61,12 @@
     <script src="../src/components/Settingsproject/ConectStyles.js" type="module"></script>
     <script src="../src/components/Settingsproject/SetStyles.js" type="module"></script>
 
+    <a href="../Views/Deudores.html" class="ButtonSettings back-button">
+        <img class="classIcon" src="../public/img/arrow-left.svg" alt="Volver" />
+    </a>
 
-
-    <section class="containDebtors" id="app">
-        <h1 class="Title_Register">Información de la cuenta</h1>
+    <section class="containDebtors" id="app" style="margin-top: 50px;">
+        <h1 class="Title_Register">Ingreso de Usuarios Aleatorios</h1>
 
         <div class="container-profile" id="profile-container">
             <div class="profile-card">
@@ -43,9 +77,10 @@
                     <div class="user-info" id="user-info">
 
                         <p class="titel"><strong>Cuantos:</strong> <span id="userAge"></span></p>
-                        <input type="number" min="1" id="Cuantos"  class="inputContain" placeholder="Agregar nuevo Deudor">
+                        <input type="number" min="1" id="Cuantos" class="inputContain"
+                            placeholder="Agregar nuevo Deudor">
                     </div>
-                    <button class="ButtonGeneral" id="addDocBtn" >
+                    <button class="ButtonGeneral" id="addDocBtn">
                         <h6>Agregar</h6>
                     </button>
                 </div>

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Volrush</title>
-
             <!-- CSS styles -->
             <link rel="stylesheet" href="../src/styles/General/Typografy.css">
             <link rel="stylesheet" href="../src/styles/General/Body.css">
@@ -20,15 +19,53 @@
         
             <!--Vue connect-->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.47/vue.global.prod.js"></script>
+    <style>
+    body {
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
+
+    .ButtonSettings {
+      padding: 10px;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+
+    .settings-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    .classIcon {
+      width: 24px;
+      height: 24px;
+    }
+  </style>
+
 </head>
 <body class="bodyDebtors">
 
     <script src="../src/components/Settingsproject/ConectStyles.js" type="module"></script>
     <script src="../src/components/Settingsproject/SetStyles.js" type="module"></script>
+
+  
     
-             <a href="../Views/ConfigUsuario.html" class="ButtonSettings">
-        <img src="../public/img/config.svg" alt="Volver" />
-         </a>
+<a href="../index.html" class="ButtonSettings back-button">
+     <img class="classIcon" src="../public/img/arrow-left.svg" alt="Volver" />
+  </a>
+
+  <a href="../Views/Deudor.html" class="ButtonSettings settings-button">
+    <img src="../public/img/config.svg" alt="Configuración" />
+  </a>
     
 <h2 class="Title_Register">Debtors</h2>
 

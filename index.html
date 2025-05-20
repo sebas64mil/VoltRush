@@ -1,51 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log in VoltRush</title>
 
-        <!-- CSS styles -->
+    <!-- CSS styles -->
     <link rel="stylesheet" href="../src/styles/General/Typografy.css">
     <link rel="stylesheet" href="../src/styles/General/Body.css">
     <link rel="stylesheet" href="../src/styles/General/Buttons.css">
     <link rel="stylesheet" href="../src/styles/General/LogIn.css">
 
-    
+
     <!-- font families-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
 
-
+<style>
+     body {
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
+</style>
 
 </head>
+
 <body>
     <script src="./src/components/Settingsproject/ConectStyles.js" type="module"></script>
-    <script src="./src/components/Settingsproject/SetStyles.js" type="module"></script> 
-      
-<section  class="BodyRegister">
+    <script src="./src/components/Settingsproject/SetStyles.js" type="module"></script>
 
-    <section class="ContainerLogIn">
+    <section class="BodyRegister">
 
-        <h3 class="Title_Register">Log In</h3>
+        <section class="ContainerLogIn">
 
-        <div class="inputRegister">
-            <label for="docId" class="inputText"><h6>Name</h6></label>
-            <input class="inputContain"  type="text" id="Name" placeholder="Ej: pablo">
+            <h3 class="Title_Register">Log In</h3>
 
-            <label for="docId" class="inputText"><h6>PassWord</h6></label>
-            <input class="inputContain" type="text" id="docIdContraseña" placeholder="Ej: 123456789">
+            <div class="inputRegister">
+                <label for="LogIn" class="inputText">
+                    <h6>Email</h6>
+                </label>
+                <input class="inputContain" type="text" id="LogIn" placeholder="Ej: pablo">
 
-        </div>    
-          </a>
-          <a href="./Views/Deudores.html" class="ButtonGeneral" title="Click here" id="btngetDatabase"><h6>LOG IN</h6></a>
+                <label for="LogPassword" class="inputText">
+                    <h6>Contraseña</h6>
+                </label>
+                <input class="inputContain" type="password" id="LogPassword" placeholder="Ej: 123456789">
+            </div>
+            </a>
 
-          <a href="./Views/SignIn.html" class="ButtonGeneral" title="Click here" ><p class="B1">Sign In</p></a>
+            <a class="ButtonGeneral" id="LogInButton" title="Click here">
+                <h6>LOG IN</h6>
+            </a>
 
-</section >
+            <a href="./Views/SignIn.html" class="ButtonGeneral" title="Click here">
+                <p class="B1">Sign In</p>
+            </a>
+
+        </section>
 
     </section>
 
 </body>
+
 </html>
+<script src="frontend/login.js"></script>

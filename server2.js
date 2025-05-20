@@ -72,13 +72,15 @@ app.post('/register', async (req, res) => {
   }
 });
 
+//////////////////////////////////////////////////////////////////////////////////////
+
 // GET /user/:username — consultar usuario en base de datos SQL
 app.get('/user/:username', async (req, res) => {
   const db = new SqlConnection();
   try {
     await db.connectToDb();
     const result = await db.query(
-      "SELECT * FROM user WHERE iduser = ?",
+      "SELECT * FROM employee WHERE adress = ?",
       [req.params.username]
     );
     await db.closeConnection();
