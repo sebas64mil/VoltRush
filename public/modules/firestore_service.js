@@ -7,6 +7,10 @@ export class FirestoreService {
    
   }
 
+  alert(message) {
+    alert(message);
+  }
+
   async getAllDocuments() {
     const snapshot = await getDocs(this.collectionTeams);
     const data = [];
@@ -34,10 +38,8 @@ export class FirestoreService {
       const docRef = doc(this.collectionTeams, customId.toString());
       await setDoc(docRef, dataObject);
       console.log("Documento creado con ID:", customId);
-      alert("Documento creado con éxito.");
     } catch (e) {
       console.error("Error al crear el documento:", e);
-      alert("Error al crear el documento.");
     }
   }
 
